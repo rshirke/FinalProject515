@@ -10,16 +10,22 @@
         Welcome to Admin Page
     </ui:define>
 
-<ui:define name="body">
-      
-   <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
-                                </div>
-                            </div>
+    <ui:define name="body">
+
+        <div class="row">
+            <div class="large-12 large-centered columns">
+                <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
+            </div>
+        </div>
+        
+               <div class="row">
+            <div class="large-12 large-centered columns">
+                <h:form><h:commandButton class="button" action="#{crawlproductBean.executecrawler()}" value="Execute Crawler"/></h:form>
+            </div>
+        </div>
     </ui:define>
 
-   
 
-    
+
+
 </ui:composition>

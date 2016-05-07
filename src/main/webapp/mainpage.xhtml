@@ -10,17 +10,18 @@
         You are in Main Page
     </ui:define>
 
-<ui:define name="body">
-      
-   <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
-                                    <h:outputText>You are in main page </h:outputText>
-                                </div>
-                            </div>
+    <ui:define name="body">
+
+        <div class="row">
+            <div class="large-12 large-centered columns">
+                <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
+                <h:outputText>You are in main page </h:outputText>
+                <h:outputLabel for="usersPhone" value="#{mainpageBean.searchstring}"/>
+            </div>
+        </div>
     </ui:define>
 
-   
 
-    
+
+
 </ui:composition>

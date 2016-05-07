@@ -11,23 +11,24 @@
     <ui:define name="title">
         Welcome to User Page
     </ui:define>
-<h1>Hello User!</h1>
-    
-<ui:define name="body">
-<div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
-                                </div>
+    <h1>Hello User!</h1>
+
+    <ui:define name="body">
+        <div class="row">
+            <div class="large-12 large-centered columns">
+                <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
+            </div>
+            <div>
+                <h4>Kindly insert the product name</h4>
+                <h:form> <h:inputText p:placeholder="query" class="expand" id="searchstring" value="#{mainpageBean.searchstring}" binding="#{inputvalue}"/>
+
+                    <h:commandLink action="#{mainpageBean.doSearch(inputvalue.value)}" value="Search Query"/></h:form>
+            </div>
+        </div>
+    </ui:define>
+
+
     <div>
-        <h4>Kindly insert the product name</h4>
-        <h:inputText id="inputtext" class="expand" value=""></h:inputText>
-        <h:form><h:commandButton class="button" value="Find products" action="#{mainpageBean.doSearch()}"/></h:form>
+
     </div>
-                            </div>
-</ui:define>
-
-
-<div>
-    
-</div>
 </ui:composition>

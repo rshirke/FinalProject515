@@ -6,31 +6,37 @@
 package edu.iit.sat.itmd4566.rshirke.rshirke.fp.web;
 
 
+import java.io.Serializable;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.NotNull;
+import org.eclipse.persistence.sessions.serializers.Serializer;
 
 /**
  *
  * @author Rohan
  */
-@Named
-@RequestScoped
-public class mainpageBean extends AbstractJSFBean {
+@ManagedBean
+@SessionScoped
+public class mainpageBean extends AbstractJSFBean implements Serializable{
     
     @NotNull(message = "Kindly enter product name!")
     private String searchstring;
     
     private static final Logger LOG = Logger.getLogger(LoginBean.class.getName());
     
-    public String doSearch() {
+    public String doSearch(String searchvalue) {
         HttpServletRequest req = (HttpServletRequest) facesContext.getExternalContext().getRequest();
         try {
-           LOG.log(Level.SEVERE, "The Search String is "+ searchstring);
+           LOG.log(Level.SEVERE, "The Search String is "+ searchvalue);
+           LOG.log(Level.SEVERE, "The Searchstring is "+ searchstring);
+           //call the product service and find all the products 
+           // returns list  product.findall string pass
            
         } catch (Exception ex) {
             LOG.log(Level.SEVERE, "There has been a problem when search query was hit", ex);
@@ -39,8 +45,16 @@ public class mainpageBean extends AbstractJSFBean {
             return "/login.xhtml";
         }
 
-        // send user to welcome page
+        // send user to page main page where comparison will be made
         return "/mainpage.xhtml";
+    }
+
+    public String getSearchstring() {
+        return searchstring;
+    }
+
+    public void setSearchstring(String searchstring) {
+        this.searchstring = searchstring;
     }
     
 }
