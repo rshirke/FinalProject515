@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                template="/WEB-INF/publicTemplate.xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+    <ui:define name="title">
+        You are in Main Page
+    </ui:define>
+
+<ui:define name="body">
+      
+   <div class="row">
+                                <div class="large-12 large-centered columns">
+                                    <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
+                                    <h:outputText>You are in main page </h:outputText>
+                                </div>
+                            </div>
+    </ui:define>
+
+   
+
+    
+</ui:composition>

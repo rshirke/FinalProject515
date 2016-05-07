@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="rshirkePU" transaction-type="JTA">
+    <jta-data-source>jdbc/itmd4515DS</jta-data-source>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.Clicked_History</class>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.NotifyAlert</class>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.Prod_Hist</class>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.Product</class>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.Query_History</class>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.Website</class>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.security.Group</class>
+    <class>edu.iit.sat.itmd4566.rshirke.rshirke.fp.model.security.User</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+</persistence>

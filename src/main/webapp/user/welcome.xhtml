@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                template="/WEB-INF/publicTemplate.xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+
+
+    <ui:define name="title">
+        Welcome to User Page
+    </ui:define>
+<h1>Hello User!</h1>
+    
+<ui:define name="body">
+<div class="row">
+                                <div class="large-12 large-centered columns">
+                                    <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
+                                </div>
+    <div>
+        <h4>Kindly insert the product name</h4>
+        <h:inputText id="inputtext" class="expand" value=""></h:inputText>
+        <h:form><h:commandButton class="button" value="Find products" action="#{mainpageBean.doSearch()}"/></h:form>
+    </div>
+                            </div>
+</ui:define>
+
+
+<div>
+    
+</div>
+</ui:composition>
