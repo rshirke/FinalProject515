@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                template="/WEB-INF/publicTemplate.xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+    <ui:define name="title">
+        You are in Main Page
+    </ui:define>
+
+    <ui:define name="body">
+
+        <div class="large-6 columns">
+            <h3>Add New User</h3>
+            <h:form>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <h:outputLabel for="WebsiteName" value="Website Name"/>
+                        <h:inputText p:placeholder="Website Name" id="websitename" value="#{wedSiteAdd.websitename}"/>
+                    </div>
+                    <div class="large-12 columns">
+                        <h:outputLabel for="WebsiteURL" value="Website URL"/>
+                        <h:inputText p:placeholder="Website URL" id="websiteurl" value="#{wedSiteAdd.websiteurl}"/>
+                    </div>
+                    <div class="large-12 columns">
+                        <h:outputLabel for="WebsiteDesc" value="WebsiteDESC"/>
+                        <h:inputText p:placeholder="Website Description" id="websitedescription" value="#{wedSiteAdd.websitedescription}"/>
+                    </div>          
+                    <h:column>
+                        <h:commandLink action="#{wedSiteAdd.insertWebsite}" value="Create Website"/>
+                    </h:column>
+                </div>
+            </h:form>    
+        </div>
+        
+    </ui:define>
+
+
+
+
+</ui:composition>
