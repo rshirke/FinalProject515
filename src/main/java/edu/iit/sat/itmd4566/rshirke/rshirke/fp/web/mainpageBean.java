@@ -43,6 +43,8 @@ public class mainpageBean extends AbstractJSFBean implements Serializable{
            LOG.log(Level.SEVERE, "The Searchstring is "+ searchstring);
            
            
+           
+           
            //findout the product searched by user 
           // productservice.findByname(searchstring);
            
