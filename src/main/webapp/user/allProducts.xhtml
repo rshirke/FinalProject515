@@ -15,7 +15,7 @@
     
 
     <ui:define name="body">
-        <div class="row">products
+        <div class="row">
             <div class="large-12 large-centered columns">
                 <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
             </div>
@@ -32,7 +32,7 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputText value="Link"/></f:facet>
-                    <h:link value="#{products.product_url}" outcome="Link" />
+                    <h:link value="#{products.product_url}" outcome="Link" disabled="true" />
                 </h:column> 
             </h:dataTable>
         </div>   

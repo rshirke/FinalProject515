@@ -30,7 +30,8 @@ import javax.persistence.Table;
         {
             @NamedQuery(name = "Product.findall", query = "Select p from Product p"),
             @NamedQuery(name = "Product.findbyId", query = "Select p from Product p where p.product_id =:productid"),
-            @NamedQuery(name = "Product.delete", query = "Delete from Product as p")
+            @NamedQuery(name = "Product.delete", query = "Delete from Product as p"),
+            @NamedQuery(name = "Product.findByname", query = "Select p from Product p where p.product_name =:productname")    
         }
 )
 

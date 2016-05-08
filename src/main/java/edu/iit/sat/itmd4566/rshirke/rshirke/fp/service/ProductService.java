@@ -60,7 +60,7 @@ public class ProductService extends AbstractService<Product> {
     public Product findByname(String product_name) {
         return em.createNamedQuery("Product.findByname",
                 Product.class)
-                .setParameter("product_name", product_name)
+                .setParameter("productname", product_name)
                 .getSingleResult();
     }
     

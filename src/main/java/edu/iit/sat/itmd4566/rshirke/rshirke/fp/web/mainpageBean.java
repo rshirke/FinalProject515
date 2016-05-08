@@ -6,9 +6,11 @@
 package edu.iit.sat.itmd4566.rshirke.rshirke.fp.web;
 
 
+import edu.iit.sat.itmd4566.rshirke.rshirke.fp.service.ProductService;
 import java.io.Serializable;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -25,6 +27,10 @@ import org.eclipse.persistence.sessions.serializers.Serializer;
 @SessionScoped
 public class mainpageBean extends AbstractJSFBean implements Serializable{
     
+    
+     @EJB
+    private ProductService productservice;
+    
     @NotNull(message = "Kindly enter product name!")
     private String searchstring;
     
@@ -35,6 +41,11 @@ public class mainpageBean extends AbstractJSFBean implements Serializable{
         try {
            LOG.log(Level.SEVERE, "The Search String is "+ searchvalue);
            LOG.log(Level.SEVERE, "The Searchstring is "+ searchstring);
+           
+           
+           //findout the product searched by user 
+          // productservice.findByname(searchstring);
+           
            //call the product service and find all the products 
            // returns list  product.findall string pass
            
