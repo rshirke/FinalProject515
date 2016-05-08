@@ -18,6 +18,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Rohan
  */
+@Named
 @Stateless
 public class ProductService extends AbstractService<Product> {
     
@@ -50,9 +51,9 @@ public class ProductService extends AbstractService<Product> {
         return em.find(Product.class, id);
     }
 
-    @Override
+    //@Override
     public List<Product> findAll() {
-        return em.createNamedQuery("Product.findAll",
+        return em.createNamedQuery("Product.findall",
                 Product.class).getResultList();
     }
 

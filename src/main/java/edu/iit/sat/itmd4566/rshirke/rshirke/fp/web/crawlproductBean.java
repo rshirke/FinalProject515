@@ -39,6 +39,32 @@ public class crawlproductBean extends AbstractJSFBean {
     @EJB
     private WebsiteService websiteservice;
 
+    ArrayList<Product> lists = new ArrayList<Product>();
+    
+    
+    
+     public String getAllProducts() {
+        HttpServletRequest req = (HttpServletRequest) facesContext.getExternalContext().getRequest();
+        try {
+          // lists = productservice.findAll();
+           //call the product service and find all the products 
+           // returns list  product.findall string pass
+           
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "There has been a problem when all products were tried to search", ex);
+            facesContext.addMessage(null, new FacesMessage("Bad Login", "Detail: You made a bad login!"));
+            // return the user to the login page with an error message
+            return "/login.xhtml";
+        }
+
+        // send user to page main page where comparison will be made
+        return "/user/allProducts.xhtml";
+    }
+    
+    
+    
+    
+    
     public String executecrawler() {
         HttpServletRequest req = (HttpServletRequest) facesContext.getExternalContext().getRequest();
         try {
@@ -105,6 +131,14 @@ public class crawlproductBean extends AbstractJSFBean {
 
         // send user to page main page where comparison will be made
         return "/mainpage.xhtml";
+    }
+
+    public ArrayList<Product> getLists() {
+        return lists;
+    }
+
+    public void setLists(ArrayList<Product> lists) {
+        this.lists = lists;
     }
 
 }

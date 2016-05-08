@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                template="/WEB-INF/publicTemplate.xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
+    <ui:define name="title">
+        All Products Page
+    </ui:define>
+    
+
+    <ui:define name="body">
+        <div class="row">products
+            <div class="large-12 large-centered columns">
+                <h:form><h:commandButton class="button" action="#{loginBean.doLogout()}" value="Logout"/></h:form>
+            </div>
+            <div class="large-6 columns">
+            <h3>All Products</h3>
+            <h:dataTable value="#{productService.findAll()}" var="products">
+                <h:column>
+                    <f:facet name="header"><h:outputText value="Product Name"/></f:facet>
+                    <h:outputText value="#{products.product_name}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="Price"/></f:facet>
+                    <h:outputText value="#{products.product_price}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="Link"/></f:facet>
+                    <h:link value="#{products.product_url}" outcome="Link" />
+                </h:column> 
+            </h:dataTable>
+        </div>   
+            
+        </div>
+    </ui:define>
+
+
+    <div>
+
+    </div>
+</ui:composition>
